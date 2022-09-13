@@ -61,7 +61,7 @@
         <span v-if="i !== permissionsForCurrentUser.length-1">, </span>
         <span v-if="i === permissionsForCurrentUser.length-1">. </span>
       </span>
-            <form @submit.prevent="addPermisionForCurrentUser">
+            <form @submit.prevent="addPermissionForCurrentUser">
                 <input hidden v-model="form.user_id=selectedUser.id" id="user_id" name="user_id">
                 <select class="form-select w-50 mx-auto"
                         id="permissions_for_user_id"
@@ -118,7 +118,7 @@
                         this.permissionsForCurrentUser = response.data.data;
                     });
             },
-            addPermisionForCurrentUser() {
+            addPermissionForCurrentUser() {
                 axios.post('http://127.0.0.1:8000/api/users/permission', this.form);
             }
         }
